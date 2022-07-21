@@ -146,8 +146,17 @@
 .verde { 
   background-color: green;
 }
-.marcado {
+
+.marcado [name="close-circle"]{
   color: #D70900;
+  text-decoration: line-through;
+}
+.marcado [name="checkmark-circle"]{
+  color: #2FBE34;
+  text-decoration: line-through;
+}
+.marcado [name="help-circle"]{
+  color: #FF922E;
   text-decoration: line-through;
 }
 
@@ -161,6 +170,16 @@
     justify-content: center;
     background-color: #FFFFFF;
   }
+  .final {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+  }
+
   .resultado [name="checkmark-circle"]{
     font-size: 30px;
     color: #2FBE34;

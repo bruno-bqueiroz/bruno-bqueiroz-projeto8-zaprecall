@@ -1,4 +1,4 @@
-import Pagina2 from "./Pagina2"
+//import Pagina2 from "./Pagina2"
 
 
 export default function PaginaInicial(){
