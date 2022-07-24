@@ -1,13 +1,16 @@
+
 import React from "react";
 
-export default function CardFechado (setCard){
+export default function CardFechado ({card, index}){
+    const [card, setCard] = React.useState(card);
 
+    function click (){
+        setCard (!card);    
+    }
     return (
-        <div className="perguntas">
-             <div className="pergunta">
-             <p> Pergunta</p>
-             <ion-icon name="play-outline" onClick = {() => setCard(true)}></ion-icon>
-            </div>
-        </div>
+        <>    
+        <p> Pergunta {index}</p>
+        <ion-icon name="play-outline" onClick = {click}></ion-icon>
+        </>            
     )
 }

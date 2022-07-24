@@ -1,6 +1,6 @@
-//import react from "react";
+import react from "react";
 
-function CardAberto (setResposta){
+function CardAberto ({setResposta}){
     return (
         <div className="perguntas">
             <p onClick={() => setResposta(true)}>
