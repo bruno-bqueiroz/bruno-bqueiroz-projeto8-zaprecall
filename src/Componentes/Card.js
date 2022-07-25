@@ -32,7 +32,6 @@ const questoes = [
     function createDeck() {
         questoes.forEach((value) => {
         deckGame.push({ ...value });
-        deckGame.push({ ...value });
       });
     
       deckGame.sort(() => Math.random() - 0.5);
