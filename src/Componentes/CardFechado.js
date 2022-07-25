@@ -1,6 +1,6 @@
 
 import React from "react";
-
+let contador = 0;
 
 export default function CardFechado (
     {arrayPergunta,
@@ -8,6 +8,9 @@ export default function CardFechado (
     index}){
     const [card, setCard] = React.useState(false);
     const [resposta, setResposta] = React.useState(false);
+    
+        
+
 
 return (
     <>{!card ? 
@@ -23,21 +26,23 @@ return (
         </> :
         <>  
             <div className="botaoResposta">
-            <p> {arrayResposta}</p>
-            <div className="botao-resposta">
+                <p> {arrayResposta}</p>
+                <div className="botao-resposta" onClick = {() => setCard(false)}>
             <div className="vermelho">
                 <p>Não lembrei</p>
             </div>
             <div className="amarelo">
                 <p>Quase não lembrei</p>
             </div>
+
             <div className="verde">
                 <p>Zap!</p>
             </div>
-            </div>
-            </div>
+        </div>
+    </div>
         </>
         }
         </>            
     )
 }
+export {contador};

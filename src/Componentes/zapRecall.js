@@ -4,7 +4,7 @@ import Card from "./Card"
 
 
 
-let contador = 0;
+
 export default function ZapRecall(){
     return (
         <>
@@ -14,9 +14,7 @@ export default function ZapRecall(){
                     <b>ZapRecall</b>
                 </div>
                 <Card />
-                <div className="rodape">
-                    <p>{contador}/4 CONCLUÍDOS</p>
-                </div>
+                
             </div>
         </>
     );

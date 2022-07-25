@@ -1,5 +1,6 @@
 import React from "react"
 import CardFechado from "./CardFechado";
+import { contador } from "./CardFechado";
 
 
 const questoes = [
@@ -37,6 +38,7 @@ const questoes = [
     }
     ];
 
+    
 export default function Card (){
   
     return ( 
@@ -50,6 +52,9 @@ export default function Card (){
                     index = {index + 1}/>
                 </div>
              ))}
+                <div className="rodape">
+                    <p>/4 CONCLUÍDOS</p>
+                </div>
             </div>
          </>
      )
