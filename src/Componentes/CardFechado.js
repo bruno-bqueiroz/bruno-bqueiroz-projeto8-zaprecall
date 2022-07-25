@@ -1,7 +1,6 @@
 
 import React from "react";
 let contador = 0;
-let iCones = "";
 
 
 export default function CardFechado (
@@ -13,6 +12,7 @@ export default function CardFechado (
     setResultado}){
     const [card, setCard] = React.useState(false);
     const [resposta, setResposta] = React.useState(false);
+    const [bloqueado, setBloqueado] = React.useState(false);
     
     function click(){
         setCard(!card);
@@ -21,50 +21,62 @@ export default function CardFechado (
     setResultado (contador);
     
 function vermelho(){
-    iCones = "close-circle";
+    const iCones = "close-circle";
+    setIcons([...icons, iCones]);
+    setBloqueado(false);
     
 }
 function amarelo(){
-    iCones = "help-circle";
-    
+    const iCones = "help-circle";
+    setIcons([...icons, iCones]);
+    setBloqueado(false);
 }
-
+function verde(){
+    const iCones = "checkmark-circle";
+    setIcons([...icons, iCones]);
+    setBloqueado(false);
+}
 
  
 
 return (
 
     <>
-    {!card ? 
+    {!card && !bloqueado  ? 
         <>    
             <div className="caixa-fechada">
                 <p> Pergunta {index}</p>
                 <ion-icon name="play-outline" onClick = {() => setCard(true)}></ion-icon>
             </div>
-        </> : !resposta ?
+        </> : !resposta && !bloqueado ?
         <>
             <p> {arrayPergunta}</p>
             <div className="setinha"  onClick = {() => setResposta(true)}>
                 <img src="assets/setinha.png" alt="logo"/>
             </div>
-        </> :
+        </> : !bloqueado ?
         <>  
             <div className="botaoResposta">
                 <p> {arrayResposta}</p>
                 <div className="botao-resposta" onClick = {click}>
-            <div className="vermelho" onClick = {()=>setIcons("close-circle")}>
+            <div className="vermelho" onClick = {vermelho}>
                 <p>Não lembrei</p>
             </div>
-            <div className="amarelo" onClick = {()=>setIcons("help-circle")}>
+            <div className="amarelo" onClick = {amarelo}>
                 <p>Quase não lembrei</p>
             </div>
 
-                <div className="verde" onClick = {()=>setIcons("checkmark-circle")}>
+                <div className="verde" onClick = {verde}>
                     <p>Zap!</p>
                 </div>
             </div>
         </div>
         
+        </> :<>
+            <p> {arrayPergunta}</p>
+            <div className="setinha">
+                <img src="assets/setinha.png" alt="logo"/>
+            </div>
         </>
         }
         </> 

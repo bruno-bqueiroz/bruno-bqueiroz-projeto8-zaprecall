@@ -1,3 +1,4 @@
+
 import React from "react"
 import CardFechado from "./CardFechado";
 
@@ -27,18 +28,31 @@ const questoes = [
         resposta: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
     }
     ];
+    const deckGame = [];
+    function createDeck() {
+        questoes.forEach((value) => {
+        deckGame.push({ ...value });
+        deckGame.push({ ...value });
+      });
     
+      deckGame.sort(() => Math.random() - 0.5);
+      return deckGame;
+    }
+    
+    createDeck();
     
 
 export default function Card (){
     
     const [resultado, setResultado] = React.useState(0);
-    const [icons, setIcons] = React.useState("");
-        console.log(icons);
+    const [icons, setIcons] = React.useState([]);
+    
+    console.log(icons);
+
     return ( 
         <>
          <div className="perguntas">
-         {questoes.map((objeto, index) => (
+         {deckGame.map((objeto, index) => (
                 <div className="caixa" key={index}>
                     <CardFechado
                     arrayPergunta = {objeto.pergunta}
@@ -52,9 +66,12 @@ export default function Card (){
              ))}
             <div className="rodape">
                  <p>{resultado}/8 CONCLUÍDOS</p>
-                 
                  <div className="resultado">
-                   <ion-icon name={icons}></ion-icon>
+                {icons.map((objeto,index)=>(
+                 <div className="resultado" key={index}>
+                   <ion-icon name={objeto}></ion-icon>
+                </div> 
+                ))}
                 </div>
                 
             </div> 
