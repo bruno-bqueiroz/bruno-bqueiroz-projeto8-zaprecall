@@ -1,7 +1,5 @@
 import React from "react"
 import CardFechado from "./CardFechado";
-import CardAberto from "./Cardaberto";
-import CardVirado from "./CardVirado";
 
 
 const questoes = [
@@ -39,26 +37,17 @@ const questoes = [
     }
     ];
 
-export default function Card (props){
-
-    
-    const [resposta, setResposta] = React.useState(false);
-
+export default function Card (){
+  
     return ( 
-        <>
-        <div className="perguntas">
-        {questoes.map((objeto, index) => (
-         <div className="caixa">
-          {!card ?
-           <CardFechado card = {objeto.card} index = {index + 1}/>
-
-           : !resposta?
-             <CardAberto setPergunta = {objeto.pergunta} />
-            : <CardVirado setResposta = {objeto.resposta}/>
-            }
+         <>
+         <div className="perguntas">
+         {questoes.map((objeto, index) => (
+                <div className="caixa" key={index}>
+                    <CardFechado index = {index + 1}/>
+                </div>
+             ))}
             </div>
-            ))}
-            </div>
-        </>
-    )
+         </>
+     )
 }

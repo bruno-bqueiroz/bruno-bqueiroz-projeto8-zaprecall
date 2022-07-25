@@ -1,9 +1,9 @@
 import react from "react";
 
-function CardAberto ({setResposta}){
+function CardAberto (){
     return (
         <div className="perguntas">
-            <p onClick={() => setResposta(true)}>
+            <p>
                 Card Aberto
             </p>
         </div>
