@@ -44,7 +44,10 @@ export default function Card (){
          <div className="perguntas">
          {questoes.map((objeto, index) => (
                 <div className="caixa" key={index}>
-                    <CardFechado index = {index + 1}/>
+                    <CardFechado
+                    arrayPergunta = {objeto.pergunta}
+                    arrayResposta = {objeto.resposta}
+                    index = {index + 1}/>
                 </div>
              ))}
             </div>
