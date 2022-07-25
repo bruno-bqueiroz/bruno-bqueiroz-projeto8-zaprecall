@@ -46,7 +46,7 @@
     margin-top: 50px;
     width: 60vw;
     height:10vh;
-    font-size: 20px;
+    font-size: 5vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,7 +71,6 @@
     width: auto;
     height: 15vw;
   }
-
   .perguntas {
     width: 100%;
     height: 80%;
@@ -92,12 +91,24 @@
     align-items: center;
     justify-content: space-between;
   }
-  .pergunta p{
+  .caixa-fechada{
+    width: 100%;
+    height: 2vw;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pergunta p, .caixa-fechada p, .caixa p{
     font-size: 5vw;
   }
-  .pergunta ion-icon{
+  .pergunta ion-icon, .caixa-fechada ion-icon, .caixa img{
     font-size: 8vw;
   }
+  .caixa img{
+    width: 5vw;
+    height: auto;
+  }
+
   .resposta  {
     width: 100%;
     height: 20vh;
@@ -194,9 +205,10 @@
 
   .rodape {
     width: 100%;
-    height: 10%;
+    min-height: 10%;
     position:fixed;
     bottom: 0px;
+    padding-top: 2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,6 +217,7 @@
   }
   .rodape p{
     font-size: 5vw;
+    margin-bottom: 1vh;
   }
 
   .final {
@@ -218,19 +231,18 @@
   }
 
   .resultado [name="checkmark-circle"]{
-    font-size: 30px;
+    font-size: 7vw;
     color: #2FBE34;
   }
   .resultado [name="close-circle"]{
-    font-size: 30px;
+    font-size: 7vw;
     color: #FF3030;
   }
   .resultado [name="help-circle"]{
-    font-size: 30px;
+    font-size: 7vw;
     color: #FF922E;
   }
- 
 
-  
-
-  
+  .resultado {
+    display: flex;
+  }
