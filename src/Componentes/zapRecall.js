@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card"
+import Cards from "./Cards"
 
 
 
@@ -13,8 +13,7 @@ export default function ZapRecall(){
                     <img src="assets/logo.png" alt="logo"/>
                     <b>ZapRecall</b>
                 </div>
-                <Card />
-                
+                <Cards />
             </div>
         </>
     );

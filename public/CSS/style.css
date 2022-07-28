@@ -3,8 +3,8 @@
   }
   
   body {
-    width: 100vw;
-    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
     background-color: #FB6B6B;
     font-family: Recursive;
     font-weight: 700;
@@ -57,7 +57,7 @@
 
 
   .topo {
-    width: 100%;
+    width: 100vw;
     height: 15%;
     position:fixed;
     top: 0px;

@@ -14,18 +14,6 @@ const questoes = [
     },
     {   pergunta: "Podemos colocar __ dentro do JSX",
         resposta: "expressões"
-    },
-    {   pergunta: "O ReactDOM nos ajuda __",
-        resposta: "interagindo com a DOM para colocar componentes React na mesma"
-    },
-    {   pergunta: "Usamos o npm para __",
-        resposta: "gerenciar os pacotes necessários e suas dependências"
-    },
-    {   pergunta: "Usamos props para __",
-        resposta: "passar diferentes informações para componentes"
-    },
-    {   pergunta: "Usamos estado (state) para __",
-        resposta: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
     }
     ];
     const deckGame = [];
@@ -41,12 +29,18 @@ const questoes = [
     createDeck();
     
 
-export default function Card (){
+export default function Cards (){
     
     const [resultado, setResultado] = React.useState(0);
     const [icons, setIcons] = React.useState([]);
     
-    console.log(icons);
+    
+    function verificaErro(respostas){
+        if (respostas.includes("close-circle")){
+            return true;
+        } else return false;
+    }
+
 
     return ( 
         <>
@@ -54,23 +48,36 @@ export default function Card (){
          {deckGame.map((objeto, index) => (
                 <div className="caixa" key={index}>
                     <CardFechado
-                    arrayPergunta = {objeto.pergunta}
+                arrayPergunta = {objeto.pergunta}
                     arrayResposta = {objeto.resposta}
-                    index = {index + 1}
+                index = {index + 1}
                     setResultado = {setResultado}
                     setIcons = {setIcons}
-                    icons = {icons}
+                icons = {icons}
                     />
                 </div>
              ))}
             <div className="rodape">
-                 <p>{resultado}/8 CONCLUÍDOS</p>
+                 <p>{resultado}/4 CONCLUÍDOS</p>
                  <div className="resultado">
-                {icons.map((objeto,index)=>(
-                 <div className="resultado" key={index}>
-                   <ion-icon name={objeto}></ion-icon>
-                </div> 
-                ))}
+                {resultado == 4  ? verificaErro(icons)? <div className="finalizado"> Jogo Finalizado com erro</div> :<div>jogo finalizado sem erros</div> : <></>}
+                {
+                    
+                icons.map((objeto,index)=>{
+                    
+                 return (
+                    
+                    <div className="resultado" key={index}>
+                        
+                     <ion-icon name={objeto}></ion-icon>
+                     
+                     </div> 
+                    
+                    )
+
+                }
+                    
+                )}
                 </div>
                 
             </div> 
